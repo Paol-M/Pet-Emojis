@@ -1,3 +1,7 @@
+// colors
+$primary: #7ebce9;
+$secondary: #ffd399;
+
 html {
   scroll-behavior: smooth;
   background-color: #04060f;
@@ -12,9 +16,9 @@ body {
 
 a {
   text-decoration-style: wavy;
-  text-decoration-color: #88ceff;
-  text-decoration-thickness: 1px;
-  color: #ffb988;
+  text-decoration-color: $primary;
+  text-decoration-thickness: 1.4px;
+  color: $secondary;
   font-weight: 600;
 }
 
@@ -26,27 +30,27 @@ h3 {
 }
 
 main {
-  background-color: #88ceff;
-  color: #040516;
+  background-color: $primary;
+  color: #041135;
   padding: 4em 10%;
   border-radius: 0 0 32px 32px;
   p {
-    font-size: 1.4em;
+    font-size: 1.4rem;
     opacity: 0.8;
   }
   h1 {
-    font-size: 4em;
+    font-size: 4rem;
   }
 }
 
 .button {
-  background-color: #ffb988;
+  background-color: $secondary;
   border: #000 3px solid;
   color: #000;
 
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 2rem;
 
   padding: 0.2em 2em;
   border-radius: 32px;
@@ -69,7 +73,7 @@ main {
 
   h2 {
     text-align: center;
-    font-size: 2em;
+    font-size: 2rem;
     grid-area: h2;
     margin-bottom: 1em;
   }
@@ -79,7 +83,7 @@ main {
   }
 
   h3 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   p {
@@ -114,7 +118,7 @@ footer {
   background-color: #04060f;
 
   h3 {
-    color: #88ceff;
+    color: $primary;
     margin-top: 2em;
   }
 }
@@ -153,5 +157,9 @@ footer {
   }
   #pick a:nth-child(odd) {
     border-left: 3px solid #21212c;
+  }
+
+  #QA div + div {
+    margin-top: 1em;
   }
 }
