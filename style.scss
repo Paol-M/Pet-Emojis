@@ -2,10 +2,13 @@
 $primary: #7ebce9;
 $secondary: #ffd399;
 
+$secondaryHover: #ffc756;
+
 html {
   scroll-behavior: smooth;
   background-color: #04060f;
 }
+
 body {
   background-color: #000;
   color: #fff;
@@ -17,9 +20,12 @@ body {
 a {
   text-decoration-style: wavy;
   text-decoration-color: $primary;
-  text-decoration-thickness: 1.4px;
+  text-decoration-thickness: 0.8px;
   color: $secondary;
   font-weight: 600;
+  &:hover {
+    text-decoration-thickness: 1.3px;
+  }
 }
 
 p,
@@ -34,10 +40,12 @@ main {
   color: #041135;
   padding: 4em 10%;
   border-radius: 0 0 32px 32px;
+
   p {
     font-size: 1.4rem;
     opacity: 0.8;
   }
+
   h1 {
     font-size: 4rem;
   }
@@ -59,6 +67,10 @@ main {
   display: block;
   width: fit-content;
   margin-left: auto;
+
+  &:hover {
+    background-color: $secondaryHover;
+  }
 }
 
 #pick {
@@ -80,6 +92,7 @@ main {
 
   img {
     max-width: 60%;
+    transition: transform 300ms ease-in-out;
   }
 
   h3 {
@@ -88,6 +101,19 @@ main {
 
   p {
     text-align: start;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: currentColor;
+      left: 0;
+      right: 0;
+      top: -4px;
+      height: 2px;
+      transition: transform 200ms ease-out;
+      transform: scaleX(0);
+    }
   }
 
   a {
@@ -95,6 +121,16 @@ main {
     text-decoration: none;
     color: white;
     font-weight: initial;
+
+    &:hover {
+      img {
+        transform: translateY(-7px);
+      }
+
+      p::before {
+        transform: scaleX(1);
+      }
+    }
   }
 }
 
@@ -145,7 +181,7 @@ footer {
       "🐷 😺 🐢 🪄";
     grid-template-columns: repeat(4, 1fr);
 
-    a + a {
+    a+a {
       border-left: 3px solid #21212c;
     }
   }
@@ -155,11 +191,12 @@ footer {
   #pick {
     gap: 2em 0;
   }
+
   #pick a:nth-child(odd) {
     border-left: 3px solid #21212c;
   }
 
-  #QA div + div {
+  #QA div+div {
     margin-top: 1em;
   }
 }
